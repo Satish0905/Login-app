@@ -2,36 +2,24 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function Login(){
 
-    const [email,setEmail]=useState('')
-    const [password,setPassword]=useState('')
-    function handleSubmit(event: { preventDefault: () => void; }){
-        event.preventDefault();
-        axios.post("http://localhost:8000/login",{email,password})
-        .then(result=>console.log(result))
-        .catch(err=>console.log(err))
+    const router=useRouter();
+    function loginhandler(){
+        router.push("login");
+    }
+    function registerhanler(){
+        router.push("register");
     }
 
     return(
         <div className="d-flex justify-content-center aligin-items-center bg-primary">
-            <div className="p-3 bg-white w-25">
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label>Email:</label>
-                        <input type="email" placeholder="Enter the email id" className="form-control"
-                        onChange={e=> setEmail(e.target.value)}/>
-                    </div>
-                    <div className="mb-3">
-                        <label>Password:</label>
-                        <input type="password" placeholder="Enter the password" className="form-control"
-                        onChange={e=> setPassword(e.target.value)}
-                        />
-                    </div>
-                    <button className="btn btn-success">Login</button>
-                </form>
-            </div>
+            <div className="p-3 bg-white w-20">
+            <button className="btn btn-success" onClick={registerhanler}>Registration Form</button><br/><br/>
+            <button className="btn btn-success" onClick={loginhandler}>Login</button>
+        </div>
         </div>
     )
 }
