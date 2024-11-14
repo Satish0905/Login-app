@@ -15,8 +15,8 @@ export default function Login(){
     }
 
     return(
-        <div className="d-flex justify-content-center aligin-items-center bg-primary">
-            <div className="p-3 bg-white w-20">
+        <div className="a1">
+            <div>
             <button className="btn btn-success" onClick={registerhanler}>Registration Form</button><br/><br/>
             <button className="btn btn-success" onClick={loginhandler}>Login</button>
         </div>

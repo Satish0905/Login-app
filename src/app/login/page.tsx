@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 export default function login(){
 
+    const router=useRouter();
+    function loginhandler(){
+        router.push("login");
+    }
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     function handleSubmit(event: { preventDefault: () => void; }){
@@ -14,25 +19,26 @@ export default function login(){
     }
 
     return(
-        <div className="d-flex justify-content-center aligin-items-center bg-primary">
-                <div className="p-3 bg-white w-25">
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-3">
+        <div>
+            <div className="a1">
+                    <form>
+                        <div>
                             <label>Email:</label>
                             <input type="email" placeholder="Enter the email id" className="form-control"
                             onChange={e=> setEmail(e.target.value)}/>
                         </div>
-                        <div className="mb-3">
+                        <div>
                             <label>Password:</label>
                             <input type="password" placeholder="Enter the password" className="form-control"
                             onChange={e=> setPassword(e.target.value)}
                             />
                             <div>Forget Password?</div>
                         </div>
-                        <button className="btn btn-success">Login</button>
+                        <button className="btn btn-success">Login</button><br/><br/>
                     </form>
                 </div>
-            </div>
+        </div>
+                
     )
 
 }

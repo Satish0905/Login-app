@@ -1,8 +1,6 @@
-.hi{
+.a1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: aqua;
-    width:100px;
-    height: 30px;
-}
-.term{
-    color:blue;
 }
