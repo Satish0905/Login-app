@@ -13,8 +13,6 @@
     export default function Login() {
 
         const router = useRouter();
-        const userDetails={name:"hari"}
-
 
         const validate= (values:userParams)=>{
             const errors:userParams={}

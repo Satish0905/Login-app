@@ -23,6 +23,9 @@ export default function Login(){
        setUserName(null);
        router.push("/");
     }
+    function addeventhandler(){
+        router.push("addevent");
+    }
 
     return(
         <div className="a1">
@@ -34,6 +37,9 @@ export default function Login(){
                {
                 userName&&<button className="btn btn-success" onClick={logouthandler}>Logout</button>
                }
+               <br/>
+               <br/>
+               <button className="btn btn-success" onClick={addeventhandler}>Add Events</button><br/><br/>
             </div>
         </div>
     )
